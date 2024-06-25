@@ -3,7 +3,8 @@ let selectedPokemonElement = null;
 
 async function getPokemon(text) {
     try {
-        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${text}`);
+        let texxt = text.toLowerCase();
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${texxt}`);
         const data = await response.json();
         pokemons.push(data);
         loadPokemon(data, pokemons.length - 1);
